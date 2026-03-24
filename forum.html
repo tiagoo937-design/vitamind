@@ -1,324 +1,296 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Forum Communaute - FlowPerso</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f6f8;color:#222;line-height:1.7}a{text-decoration:none;color:inherit}header{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);color:white;padding:0 30px;position:sticky;top:0;z-index:999;display:flex;align-items:center;justify-content:space-between;height:65px;box-shadow:0 3px 20px rgba(0,0,0,0.4)}.logo{font-size:1.8em;font-weight:900;color:#e94560}.logo span{color:white}nav a{color:#ccc;font-weight:600;font-size:.95em;padding:8px 16px;border-radius:20px;margin-left:10px;transition:.3s}nav a:hover{background:#e94560;color:white}.forum-hero{background:linear-gradient(135deg,#0f3460,#16213e);color:white;padding:60px 30px;text-align:center}.forum-hero h1{font-size:2.8em;font-weight:900;margin-bottom:15px}.forum-hero h1 span{color:#e94560}.forum-hero p{font-size:1.1em;color:#aac4e6;max-width:600px;margin:0 auto 25px}.forum-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:25px}.fstat{text-align:center}.fstat .num{font-size:2em;font-weight:900;color:#e94560}.fstat .lab{font-size:.85em;color:#aac4e6}.container{max-width:1100px;margin:0 auto;padding:0 25px}.forum-layout{display:grid;grid-template-columns:1fr 320px;gap:30px;padding:40px 0;align-items:start}@media(max-width:800px){.forum-layout{grid-template-columns:1fr}}.categories{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}.cat-btn{background:white;border:2px solid #eee;border-radius:25px;padding:8px 20px;font-size:.9em;font-weight:600;cursor:pointer;transition:.3s;color:#555}.cat-btn:hover,.cat-btn.active{background:#e94560;border-color:#e94560;color:white}.new-post-btn{background:linear-gradient(135deg,#e94560,#c0392b);color:white;padding:14px 30px;border-radius:50px;font-weight:700;font-size:1em;border:none;cursor:pointer;width:100%;margin-bottom:25px;transition:.3s;box-shadow:0 5px 20px rgba(233,69,96,.3)}.new-post-btn:hover{transform:translateY(-2px)}.post-form{background:white;border-radius:18px;padding:28px;box-shadow:0 5px 20px rgba(0,0,0,.07);margin-bottom:30px;display:none}.post-form.open{display:block}.post-form h3{font-size:1.2em;font-weight:900;color:#1a1a2e;margin-bottom:18px}.post-form input,.post-form textarea,.post-form select{width:100%;padding:12px 15px;border:2px solid #eee;border-radius:12px;font-size:.95em;margin-bottom:12px;outline:none;font-family:inherit;resize:vertical}.post-form input:focus,.post-form textarea:focus,.post-form select:focus{border-color:#e94560}.post-form .submit-btn{background:#e94560;color:white;border:none;padding:12px 30px;border-radius:25px;font-weight:700;cursor:pointer;font-size:.95em}.thread{background:white;border-radius:18px;padding:25px;box-shadow:0 3px 15px rgba(0,0,0,.06);margin-bottom:20px;transition:.3s;cursor:pointer}.thread:hover{box-shadow:0 8px 30px rgba(0,0,0,.1);transform:translateY(-2px)}.thread-header{display:flex;align-items:flex-start;gap:15px}.thread-avatar{width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3em;flex-shrink:0;font-weight:900;color:white}.thread-meta{flex:1}.thread-author{font-weight:800;font-size:.9em;color:#1a1a2e}.thread-date{font-size:.78em;color:#999;margin-top:2px}.thread-title{font-size:1.15em;font-weight:900;color:#1a1a2e;margin:10px 0 8px;line-height:1.3}.thread-preview{color:#666;font-size:.92em;line-height:1.6}.thread-footer{display:flex;align-items:center;gap:20px;margin-top:15px;padding-top:15px;border-top:1px solid #f0f0f0}.thread-tag{background:#fff0f3;color:#e94560;font-size:.75em;font-weight:700;padding:4px 12px;border-radius:15px}.thread-stat{font-size:.82em;color:#999;display:flex;align-items:center;gap:5px}.hot-badge{background:linear-gradient(135deg,#ff6b35,#f7c59f);color:white;font-size:.7em;font-weight:700;padding:3px 10px;border-radius:10px;margin-left:8px}.reply-section{background:#f9f9f9;border-radius:12px;padding:20px;margin-top:15px;display:none}.reply-section.open{display:block}.reply{display:flex;gap:12px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #eee}.reply:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.reply-avatar{width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9em;font-weight:900;color:white;flex-shrink:0}.reply-content .reply-author{font-weight:800;font-size:.85em;color:#1a1a2e}.reply-content .reply-date{font-size:.75em;color:#999}.reply-content p{font-size:.9em;color:#555;line-height:1.6;margin-top:4px}.reply-input{display:flex;gap:10px;margin-top:15px}.reply-input input{flex:1;padding:10px 15px;border:2px solid #eee;border-radius:25px;font-size:.88em;outline:none}.reply-input input:focus{border-color:#e94560}.reply-input button{background:#e94560;color:white;border:none;padding:10px 20px;border-radius:25px;font-weight:700;cursor:pointer;font-size:.85em}.sidebar .widget{background:white;border-radius:18px;padding:25px;box-shadow:0 3px 15px rgba(0,0,0,.06);margin-bottom:25px}.widget h3{font-size:1.1em;font-weight:900;color:#1a1a2e;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #f0f0f0}.top-member{display:flex;align-items:center;gap:12px;margin-bottom:14px}.tm-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1em;color:white;font-weight:900;flex-shrink:0}.tm-info .name{font-weight:800;font-size:.9em;color:#1a1a2e}.tm-info .posts{font-size:.78em;color:#999}.tm-badge{margin-left:auto;background:#fff0f3;color:#e94560;font-size:.72em;font-weight:700;padding:3px 10px;border-radius:10px}.rules-list{list-style:none}.rules-list li{padding:8px 0;border-bottom:1px solid #f5f5f5;font-size:.88em;color:#555;display:flex;align-items:center;gap:8px}.rules-list li:last-child{border-bottom:none}.rules-list li::before{content:"";width:6px;height:6px;background:#e94560;border-radius:50%;flex-shrink:0}.trending-tag{display:inline-block;background:#f4f6f8;border-radius:20px;padding:6px 14px;font-size:.82em;font-weight:600;color:#555;margin:4px;transition:.3s;cursor:pointer}.trending-tag:hover{background:#e94560;color:white}footer{background:#1a1a2e;color:#aaa;text-align:center;padding:35px;margin-top:40px;font-size:.9em}footer a{color:#e94560}</style></head><body>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Forum Communauté - FlowPerso</title><meta name="description" content="La communauté FlowPerso - partagez vos expériences, posez vos questions et aidez-vous mutuellement."><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#0a0a0f;color:#e0e0e0;min-height:100vh}
+header{background:rgba(10,10,15,0.95);backdrop-filter:blur(10px);padding:1rem 2rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.5rem;font-weight:800;text-decoration:none;color:#fff}.logo span:first-child{color:#e94560}.logo span:last-child{color:#fff}
+nav a{color:#ccc;text-decoration:none;margin-left:1.5rem;font-weight:500;transition:color 0.3s}nav a:hover{color:#e94560}
+nav a.active{background:#e94560;color:#fff;padding:0.4rem 1rem;border-radius:20px}
+.forum-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:4rem 2rem;text-align:center}
+.forum-hero h1{font-size:2.5rem;font-weight:800;margin-bottom:1rem}.forum-hero h1 span{color:#e94560}
+.forum-hero p{font-size:1.1rem;color:#aaa;max-width:600px;margin:0 auto 2rem}
+.forum-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.fstat{text-align:center}.fstat .num{font-size:2rem;font-weight:800;color:#e94560}
+.fstat .lab{font-size:0.85rem;color:#888;margin-top:0.3rem}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+.forum-layout{display:grid;grid-template-columns:1fr 300px;gap:2rem}
+.forum-filters{display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.5rem}
+.filter-btn{padding:0.5rem 1.2rem;border:2px solid rgba(255,255,255,0.15);background:transparent;color:#ccc;border-radius:20px;cursor:pointer;font-size:0.9rem;transition:all 0.3s}
+.filter-btn:hover,.filter-btn.active{background:#e94560;border-color:#e94560;color:#fff}
+.new-thread-btn{display:block;width:100%;padding:1rem;background:linear-gradient(135deg,#e94560,#c73652);color:#fff;border:none;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;margin-bottom:1.5rem;transition:transform 0.3s}
+.new-thread-btn:hover{transform:translateY(-2px)}
+.thread-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;margin-bottom:1rem;transition:border-color 0.3s}
+.thread-card:hover{border-color:#e94560}
+.thread-header{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1rem}
+.avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0}
+.thread-meta{flex:1}.thread-meta .author{font-weight:600;color:#fff;font-size:0.9rem}.thread-meta .time{font-size:0.8rem;color:#666}
+.thread-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.75rem;cursor:pointer}
+.thread-title:hover{color:#e94560}
+.thread-preview{font-size:0.9rem;color:#888;line-height:1.6;margin-bottom:1rem}
+.thread-footer{display:flex;gap:1rem;align-items:center}
+.tag{padding:0.25rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:600}
+.thread-stats{margin-left:auto;display:flex;gap:1rem;font-size:0.85rem;color:#666}
+.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:10px;font-size:0.7rem;font-weight:700}
+.badge-hot{background:rgba(255,100,50,0.2);color:#ff6432}
+.badge-new{background:rgba(50,200,100,0.2);color:#32c864}
+.sidebar{}
+.sidebar-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+.sidebar-card h3{font-size:1rem;font-weight:700;margin-bottom:1rem;color:#fff}
+.contributor{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+.contributor .name{font-size:0.9rem;color:#ccc;flex:1}
+.contrib-badge{font-size:0.75rem;padding:0.2rem 0.5rem;border-radius:10px}
+.rule{font-size:0.85rem;color:#888;margin-bottom:0.5rem;padding-left:1rem;border-left:2px solid #e94560}
+.trend-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;font-size:0.85rem}
+.trend-item a{color:#ccc;text-decoration:none}.trend-item a:hover{color:#e94560}
+.trend-count{color:#e94560;font-weight:600}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;align-items:center;justify-content:center}
+.modal.active{display:flex}
+.modal-content{background:#1a1a2e;border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:2rem;width:90%;max-width:600px;max-height:90vh;overflow-y:auto}
+.modal-content h2{margin-bottom:1.5rem;font-size:1.3rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:0.9rem;color:#aaa;margin-bottom:0.5rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.75rem 1rem;color:#fff;font-size:0.95rem;outline:none}
+.form-group textarea{min-height:120px;resize:vertical}
+.modal-btns{display:flex;gap:1rem;justify-content:flex-end}
+.btn{padding:0.7rem 1.5rem;border-radius:8px;font-size:0.95rem;font-weight:600;cursor:pointer;border:none}
+.btn-primary{background:#e94560;color:#fff}.btn-secondary{background:transparent;color:#aaa;border:1px solid rgba(255,255,255,0.2)}
+.disqus-section{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2rem;margin-top:2rem}
+.disqus-section h2{font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;color:#fff}
+footer{background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.1);padding:3rem 2rem;text-align:center;margin-top:3rem}
+footer .logo-footer{font-size:1.5rem;font-weight:800;margin-bottom:0.5rem}
+footer p{color:#666;font-size:0.9rem;margin-bottom:1rem}
+footer .footer-links a{color:#888;text-decoration:none;margin:0 1rem;font-size:0.85rem}
+footer .footer-links a:hover{color:#e94560}
+@media(max-width:768px){.forum-layout{grid-template-columns:1fr}.forum-hero h1{font-size:1.8rem}}
+</style></head>
+<body>
 <header>
-  <a href="index.html" class="logo">Flow<span>Perso</span></a>
+  <a href="index.html" class="logo"><span>Flow</span><span>Perso</span></a>
   <nav>
     <a href="index.html">Accueil</a>
     <a href="index.html#articles">Articles</a>
-    <a href="forum.html" style="background:#e94560;color:white">Forum</a>
+    <a href="forum.html" class="active">Forum</a>
     <a href="index.html#newsletter">Newsletter</a>
   </nav>
 </header>
-
 <div class="forum-hero">
-  <h1>La <span>Communaute</span> FlowPerso</h1>
-  <p>Partagez vos experiences, posez vos questions, aidez-vous mutuellement. Ensemble on va plus loin.</p>
+  <h1>La <span>Communauté</span> FlowPerso</h1>
+  <p>Partagez vos expériences, posez vos questions, aidez-vous mutuellement. Ensemble on va plus loin.</p>
   <div class="forum-stats">
-    <div class="fstat"><div class="num" id="memberCount">247</div><div class="lab">Membres</div></div>
-    <div class="fstat"><div class="num" id="postCount">1 284</div><div class="lab">Messages</div></div>
+    <div class="fstat"><div class="num">247</div><div class="lab">Membres</div></div>
+    <div class="fstat"><div class="num">1 284</div><div class="lab">Messages</div></div>
     <div class="fstat"><div class="num">38</div><div class="lab">Discussions actives</div></div>
     <div class="fstat"><div class="num">12</div><div class="lab">En ligne</div></div>
   </div>
 </div>
-
 <div class="container">
   <div class="forum-layout">
-    <div class="main-col">
-
-      <div class="categories">
-        <button class="cat-btn active" onclick="filterCat('all',this)">Tout voir</button>
-        <button class="cat-btn" onclick="filterCat('sommeil',this)">&#x1F634; Sommeil</button>
-        <button class="cat-btn" onclick="filterCat('productivite',this)">&#x26A1; Productivite</button>
-        <button class="cat-btn" onclick="filterCat('habitudes',this)">&#x1F4AA; Habitudes</button>
-        <button class="cat-btn" onclick="filterCat('meditation',this)">&#x1F9D8; Meditation</button>
-        <button class="cat-btn" onclick="filterCat('nutrition',this)">&#x1F957; Nutrition</button>
-        <button class="cat-btn" onclick="filterCat('motivation',this)">&#x1F525; Motivation</button>
+    <div class="forum-main">
+      <div class="forum-filters">
+        <button class="filter-btn active" onclick="filterThreads('all',this)">Tout voir</button>
+        <button class="filter-btn" onclick="filterThreads('sommeil',this)">Sommeil</button>
+        <button class="filter-btn" onclick="filterThreads('productivite',this)">Productivite</button>
+        <button class="filter-btn" onclick="filterThreads('habitudes',this)">Habitudes</button>
+        <button class="filter-btn" onclick="filterThreads('meditation',this)">Meditation</button>
+        <button class="filter-btn" onclick="filterThreads('nutrition',this)">Nutrition</button>
+        <button class="filter-btn" onclick="filterThreads('motivation',this)">Motivation</button>
       </div>
-
-      <button class="new-post-btn" onclick="toggleForm()">+ Nouvelle discussion</button>
-
-      <div class="post-form" id="postForm">
-        <h3>&#x270F;&#xFE0F; Creer une nouvelle discussion</h3>
-        <input type="text" id="postAuthor" placeholder="Votre prenom ou pseudo">
-        <input type="text" id="postTitle" placeholder="Titre de votre discussion...">
-        <select id="postCat">
-          <option value="sommeil">Sommeil</option>
-          <option value="productivite">Productivite</option>
-          <option value="habitudes">Habitudes</option>
-          <option value="meditation">Meditation</option>
-          <option value="nutrition">Nutrition</option>
-          <option value="motivation">Motivation</option>
-        </select>
-        <textarea id="postContent" rows="4" placeholder="Decrivez votre question ou partagez votre experience..."></textarea>
-        <button class="submit-btn" onclick="addPost()">Publier ma discussion</button>
+      <button class="new-thread-btn" onclick="openModal()">+ Nouvelle discussion</button>
+      <div id="threads-container">
+        <div class="thread-card" data-category="sommeil">
+          <div class="thread-header">
+            <div class="avatar" style="background:linear-gradient(135deg,#e94560,#c73652)">ML</div>
+            <div class="thread-meta"><span class="author">Marie L.</span><br><span class="time">il y a 2 heures</span></div>
+            <span class="badge badge-hot">Populaire</span>
+          </div>
+          <div class="thread-title" onclick="toggleReplies('t1')">Je me reveille toujours a 3h du matin - quelqu'un a une solution ?</div>
+          <div class="thread-preview">Depuis 3 mois je me reveille systematiquement vers 3h-3h30. J'ai essaye de changer mes horaires de coucher, de reduire le cafe... rien ne fonctionne. Quelqu'un a vecu ca ?</div>
+          <div class="thread-footer">
+            <span class="tag" style="background:rgba(100,150,255,0.15);color:#6496ff">Sommeil</span>
+            <div class="thread-stats"><span>23 reponses</span><span>47 likes</span></div>
+          </div>
+          <div id="replies-t1" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="display:flex;gap:0.75rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px">
+              <div class="avatar" style="background:linear-gradient(135deg,#4CAF50,#2E7D32);width:32px;height:32px;font-size:0.75rem">AT</div>
+              <div><span style="font-weight:600;color:#fff;font-size:0.85rem">Antoine T.</span><br><span style="font-size:0.85rem;color:#aaa">Le reveil a 3h correspond souvent a une glycemie qui chute. Essaie de manger une petite collation proteinee 1h avant le coucher.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="thread-card" data-category="productivite">
+          <div class="thread-header">
+            <div class="avatar" style="background:linear-gradient(135deg,#FF9800,#F57C00)">SC</div>
+            <div class="thread-meta"><span class="author">Simon C.</span><br><span class="time">il y a 5 heures</span></div>
+            <span class="badge badge-new">Nouveau</span>
+          </div>
+          <div class="thread-title" onclick="toggleReplies('t2')">Methode Pomodoro vs Deep Work - votre avis ?</div>
+          <div class="thread-preview">J'utilise la methode Pomodoro depuis 2 ans mais je commence a me demander si le Deep Work de Cal Newport ne serait pas plus efficace pour mon type de travail.</div>
+          <div class="thread-footer">
+            <span class="tag" style="background:rgba(255,200,50,0.15);color:#ffc832">Productivite</span>
+            <div class="thread-stats"><span>15 reponses</span><span>31 likes</span></div>
+          </div>
+          <div id="replies-t2" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="display:flex;gap:0.75rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px">
+              <div class="avatar" style="background:linear-gradient(135deg,#2196F3,#1565C0);width:32px;height:32px;font-size:0.75rem">MG</div>
+              <div><span style="font-weight:600;color:#fff;font-size:0.85rem">Marc G.</span><br><span style="font-size:0.85rem;color:#aaa">Pour le dev, j'alterne : matin en Deep Work 2-3h sans interruption, apres-midi en Pomodoro pour les taches plus fragmentees.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="thread-card" data-category="habitudes">
+          <div class="thread-header">
+            <div class="avatar" style="background:linear-gradient(135deg,#00BCD4,#00838F)">EF</div>
+            <div class="thread-meta"><span class="author">Emma F.</span><br><span class="time">hier</span></div>
+          </div>
+          <div class="thread-title" onclick="toggleReplies('t3')">30 jours sans telephone le matin - mon retour d'experience</div>
+          <div class="thread-preview">J'ai decide de ne plus toucher mon telephone pendant la premiere heure apres le reveil. Resultat apres 30 jours : partage complet ici.</div>
+          <div class="thread-footer">
+            <span class="tag" style="background:rgba(100,255,150,0.15);color:#64ff96">Habitudes</span>
+            <div class="thread-stats"><span>42 reponses</span><span>128 likes</span></div>
+          </div>
+          <div id="replies-t3" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="display:flex;gap:0.75rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px">
+              <div class="avatar" style="background:linear-gradient(135deg,#e94560,#c73652);width:32px;height:32px;font-size:0.75rem">ML</div>
+              <div><span style="font-weight:600;color:#fff;font-size:0.85rem">Marie L.</span><br><span style="font-size:0.85rem;color:#aaa">Incroyable ! J'ai commence il y a 10 jours et je me sens tellement plus calme le matin. Merci pour l'inspiration !</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="thread-card" data-category="meditation">
+          <div class="thread-header">
+            <div class="avatar" style="background:linear-gradient(135deg,#9C27B0,#6A1B9A)">TR</div>
+            <div class="thread-meta"><span class="author">Thomas R.</span><br><span class="time">il y a 2 jours</span></div>
+          </div>
+          <div class="thread-title" onclick="toggleReplies('t4')">Meditation guidee ou en silence - laquelle choisir pour debuter ?</div>
+          <div class="thread-preview">Je veux me mettre a la meditation mais je ne sais pas par ou commencer. Les apps comme Petit Bambou valent-elles le coup ?</div>
+          <div class="thread-footer">
+            <span class="tag" style="background:rgba(200,100,255,0.15);color:#c864ff">Meditation</span>
+            <div class="thread-stats"><span>18 reponses</span><span>56 likes</span></div>
+          </div>
+          <div id="replies-t4" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="display:flex;gap:0.75rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px">
+              <div class="avatar" style="background:linear-gradient(135deg,#4CAF50,#2E7D32);width:32px;height:32px;font-size:0.75rem">AT</div>
+              <div><span style="font-weight:600;color:#fff;font-size:0.85rem">Antoine T.</span><br><span style="font-size:0.85rem;color:#aaa">Guidee au debut, c'est clairement plus facile. Headspace ou Insight Timer sont gratuits. Apres 30 jours tu peux passer au silence.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="thread-card" data-category="motivation">
+          <div class="thread-header">
+            <div class="avatar" style="background:linear-gradient(135deg,#FF5722,#D84315)">JP</div>
+            <div class="thread-meta"><span class="author">Julie P.</span><br><span class="time">il y a 3 jours</span></div>
+            <span class="badge badge-hot">Populaire</span>
+          </div>
+          <div class="thread-title" onclick="toggleReplies('t5')">Comment rester motive sur le long terme ? (pas juste les 2 premieres semaines)</div>
+          <div class="thread-preview">On est tous bons pour demarrer en trombe. Mais apres 2-3 semaines... pffff. Quelles sont vos strategies pour tenir sur la duree ?</div>
+          <div class="thread-footer">
+            <span class="tag" style="background:rgba(255,100,50,0.15);color:#ff6432">Motivation</span>
+            <div class="thread-stats"><span>67 reponses</span><span>203 likes</span></div>
+          </div>
+          <div id="replies-t5" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="display:flex;gap:0.75rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px">
+              <div class="avatar" style="background:linear-gradient(135deg,#9C27B0,#6A1B9A);width:32px;height:32px;font-size:0.75rem">LR</div>
+              <div><span style="font-weight:600;color:#fff;font-size:0.85rem">Laura R.</span><br><span style="font-size:0.85rem;color:#aaa">La cle : ne pas miser sur la motivation mais sur les systemes. Rends le comportement aussi automatique que se brosser les dents.</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div id="threadsList">
-
-        <div class="thread" data-cat="sommeil">
-          <div class="thread-header">
-            <div class="thread-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">ML</div>
-            <div class="thread-meta">
-              <div class="thread-author">Marie L. <span class="hot-badge">&#x1F525; Populaire</span></div>
-              <div class="thread-date">il y a 2 heures</div>
-            </div>
-          </div>
-          <div class="thread-title">Je me reveille toujours a 3h du matin - quelqu'un a une solution ?</div>
-          <div class="thread-preview">Ca fait 3 semaines que je me reveille systematiquement entre 3h et 4h, impossible de me rendormir. J'ai lu l'article sur le sommeil mais je ne sais pas quoi faire de plus. Est-ce que c'est le stress ?</div>
-          <div class="thread-footer">
-            <span class="thread-tag">&#x1F634; Sommeil</span>
-            <span class="thread-stat">&#x1F4AC; 14 reponses</span>
-            <span class="thread-stat">&#x1F440; 89 vues</span>
-            <span class="thread-stat" style="margin-left:auto;color:#e94560;font-weight:700;cursor:pointer" onclick="toggleReplies('r1')">Voir les reponses &#x25BC;</span>
-          </div>
-          <div class="reply-section" id="r1">
-            <div class="reply">
-              <div class="reply-avatar" style="background:#43e97b">TK</div>
-              <div class="reply-content">
-                <div class="reply-author">Thomas K.</div>
-                <div class="reply-date">il y a 1h30</div>
-                <p>J'avais exactement le meme probleme. Ce qui m'a aide c'est d'arreter le telephone 2h avant de dormir et de baisser le chauffage dans la chambre. En 1 semaine c'etait regle !</p>
-              </div>
-            </div>
-            <div class="reply">
-              <div class="reply-avatar" style="background:#f093fb">SC</div>
-              <div class="reply-content">
-                <div class="reply-author">Sophie C.</div>
-                <div class="reply-date">il y a 45 min</div>
-                <p>Le reveil a 3h est souvent lie a une chute du cortisol. Essaie de manger une petite collation proteines le soir (poignee de noix) et verifie si ca change quelque chose.</p>
-              </div>
-            </div>
-            <div class="reply">
-              <div class="reply-avatar" style="background:#4facfe">AR</div>
-              <div class="reply-content">
-                <div class="reply-author">Alex R.</div>
-                <div class="reply-date">il y a 20 min</div>
-                <p>La meditation de pleine conscience avant de dormir m'a completement gueri de ce probleme. 10 minutes avec l'app Petit Bambou et je dors comme un bebe maintenant !</p>
-              </div>
-            </div>
-            <div class="reply-input">
-              <input type="text" placeholder="Votre reponse..." id="replyInput_r1">
-              <button onclick="addReply('r1')">Repondre</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="thread" data-cat="habitudes">
-          <div class="thread-header">
-            <div class="thread-avatar" style="background:linear-gradient(135deg,#fa709a,#fee140)">JD</div>
-            <div class="thread-meta">
-              <div class="thread-author">Julien D.</div>
-              <div class="thread-date">il y a 5 heures</div>
-            </div>
-          </div>
-          <div class="thread-title">Challenge 30 jours sans telephone le matin - qui est partant ?</div>
-          <div class="thread-preview">Je lance un challenge : pendant 30 jours, on ne touche pas au telephone pendant la premiere heure apres le reveil. On se retrouve ici chaque semaine pour partager nos ressentis. Qui est partant ?</div>
-          <div class="thread-footer">
-            <span class="thread-tag">&#x1F4AA; Habitudes</span>
-            <span class="thread-stat">&#x1F4AC; 23 reponses</span>
-            <span class="thread-stat">&#x1F440; 156 vues</span>
-            <span class="thread-stat" style="margin-left:auto;color:#e94560;font-weight:700;cursor:pointer" onclick="toggleReplies('r2')">Voir les reponses &#x25BC;</span>
-          </div>
-          <div class="reply-section" id="r2">
-            <div class="reply">
-              <div class="reply-avatar" style="background:#e94560">NB</div>
-              <div class="reply-content">
-                <div class="reply-author">Noemie B.</div>
-                <div class="reply-date">il y a 4h</div>
-                <p>Je suis partante ! Jour 3 pour moi et c'est incroyable comme la matinee est plus calme et productive. Je recommande a tout le monde.</p>
-              </div>
-            </div>
-            <div class="reply">
-              <div class="reply-avatar" style="background:#667eea">PM</div>
-              <div class="reply-content">
-                <div class="reply-author">Pierre M.</div>
-                <div class="reply-date">il y a 2h</div>
-                <p>Jour 7 accompli ! Le plus dur c'est les 2-3 premiers jours. Apres ca devient une routine et on realise qu'on ne manquait absolument rien.</p>
-              </div>
-            </div>
-            <div class="reply-input">
-              <input type="text" placeholder="Votre reponse..." id="replyInput_r2">
-              <button onclick="addReply('r2')">Repondre</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="thread" data-cat="productivite">
-          <div class="thread-header">
-            <div class="thread-avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">LR</div>
-            <div class="thread-meta">
-              <div class="thread-author">Laura R.</div>
-              <div class="thread-date">hier</div>
-            </div>
-          </div>
-          <div class="thread-title">Comment vous organisez votre journee ideale ? Partagez votre routine !</div>
-          <div class="thread-preview">Je suis en train de construire ma routine et j'aimerais savoir comment vous, vous organisez votre journee. Heure de lever, sport, travail... donnez-moi vos astuces !</div>
-          <div class="thread-footer">
-            <span class="thread-tag">&#x26A1; Productivite</span>
-            <span class="thread-stat">&#x1F4AC; 31 reponses</span>
-            <span class="thread-stat">&#x1F440; 203 vues</span>
-            <span class="thread-stat" style="margin-left:auto;color:#e94560;font-weight:700;cursor:pointer" onclick="toggleReplies('r3')">Voir les reponses &#x25BC;</span>
-          </div>
-          <div class="reply-section" id="r3">
-            <div class="reply">
-              <div class="reply-avatar" style="background:#43e97b">MG</div>
-              <div class="reply-content">
-                <div class="reply-author">Marc G.</div>
-                <div class="reply-date">hier 20h</div>
-                <p>Ma routine : 6h lever, 10 min meditation, 30 min running, douche froide, journal de gratitude 5 min, puis travail en blocs de 90 min. Ca a change ma vie en 3 mois.</p>
-              </div>
-            </div>
-            <div class="reply">
-              <div class="reply-avatar" style="background:#a18cd1">EV</div>
-              <div class="reply-content">
-                <div class="reply-author">Emma V.</div>
-                <div class="reply-date">hier 18h</div>
-                <p>Moi je suis plutot soir. Je me leve a 7h30, je lis 20 min et je commence a travailler. Le soir je fais le sport et la meditation. Chacun son rythme !</p>
-              </div>
-            </div>
-            <div class="reply-input">
-              <input type="text" placeholder="Votre reponse..." id="replyInput_r3">
-              <button onclick="addReply('r3')">Repondre</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="thread" data-cat="meditation">
-          <div class="thread-header">
-            <div class="thread-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">CB</div>
-            <div class="thread-meta">
-              <div class="thread-author">Claire B.</div>
-              <div class="thread-date">il y a 2 jours</div>
-            </div>
-          </div>
-          <div class="thread-title">Quelle app de meditation vous conseillez pour debutant ?</div>
-          <div class="thread-preview">Je veux commencer la meditation apres avoir lu l'article sur le cerveau, mais je ne sais pas quelle application choisir entre Petit Bambou, Headspace et Calm. Des avis ?</div>
-          <div class="thread-footer">
-            <span class="thread-tag">&#x1F9D8; Meditation</span>
-            <span class="thread-stat">&#x1F4AC; 18 reponses</span>
-            <span class="thread-stat">&#x1F440; 127 vues</span>
-            <span class="thread-stat" style="margin-left:auto;color:#e94560;font-weight:700;cursor:pointer" onclick="toggleReplies('r4')">Voir les reponses &#x25BC;</span>
-          </div>
-          <div class="reply-section" id="r4">
-            <div class="reply">
-              <div class="reply-avatar" style="background:#e94560">RD</div>
-              <div class="reply-content">
-                <div class="reply-author">Romain D.</div>
-                <div class="reply-date">il y a 2 jours</div>
-                <p>Petit Bambou en francais c'est parfait pour debuter ! Les 8 premieres seances sont gratuites et les voix sont tres apaisantes. Je l'utilise depuis 2 ans.</p>
-              </div>
-            </div>
-            <div class="reply">
-              <div class="reply-avatar" style="background:#4facfe">IS</div>
-              <div class="reply-content">
-                <div class="reply-author">Isabelle S.</div>
-                <div class="reply-date">il y a 1 jour</div>
-                <p>Moi j'ai commence avec YouTube ! Des guided meditation gratuites en francais. Apres 1 mois j'ai investi dans Petit Bambou et ca valait le coup.</p>
-              </div>
-            </div>
-            <div class="reply-input">
-              <input type="text" placeholder="Votre reponse..." id="replyInput_r4">
-              <button onclick="addReply('r4')">Repondre</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="thread" data-cat="motivation">
-          <div class="thread-header">
-            <div class="thread-avatar" style="background:linear-gradient(135deg,#e94560,#c0392b)">AT</div>
-            <div class="thread-meta">
-              <div class="thread-author">Antoine T.</div>
-              <div class="thread-date">il y a 3 jours</div>
-            </div>
-          </div>
-          <div class="thread-title">Temoignage : j'ai perdu 12kg en changeant juste mes habitudes (pas de regime)</div>
-          <div class="thread-preview">Il y a 6 mois je pesais 94kg et j'etais epuise. Aujourd'hui je suis a 82kg, plein d'energie, sans jamais faire de regime. Juste en changeant mes habitudes progressivement. Je vous raconte tout...</div>
-          <div class="thread-footer">
-            <span class="thread-tag">&#x1F525; Motivation</span>
-            <span class="thread-stat">&#x1F4AC; 47 reponses</span>
-            <span class="thread-stat">&#x1F440; 412 vues</span>
-            <span class="thread-stat" style="margin-left:auto;color:#e94560;font-weight:700;cursor:pointer" onclick="toggleReplies('r5')">Voir les reponses &#x25BC;</span>
-          </div>
-          <div class="reply-section" id="r5">
-            <div class="reply">
-              <div class="reply-avatar" style="background:#667eea">FH</div>
-              <div class="reply-content">
-                <div class="reply-author">Fabrice H.</div>
-                <div class="reply-date">il y a 2 jours</div>
-                <p>Incroyable temoignage ! Tu peux nous dire quelles habitudes ont eu le plus d'impact ? Sport tous les jours ou alimentation ?</p>
-              </div>
-            </div>
-            <div class="reply">
-              <div class="reply-avatar" style="background:#e94560">AT</div>
-              <div class="reply-content">
-                <div class="reply-author">Antoine T.</div>
-                <div class="reply-date">il y a 2 jours</div>
-                <p>@Fabrice : clairement le sommeil en premier ! Une fois que j'ai dormi correctement, l'envie de malbouffe a disparue naturellement. Ensuite marche 30 min/jour et hydratation. C'est tout !</p>
-              </div>
-            </div>
-            <div class="reply-input">
-              <input type="text" placeholder="Votre reponse..." id="replyInput_r5">
-              <button onclick="addReply('r5')">Repondre</button>
-            </div>
-          </div>
-        </div>
-
+      <div class="disqus-section">
+        <h2>Espace de discussion general (commentaires permanents)</h2>
+        <p style="color:#888;font-size:0.9rem;margin-bottom:1.5rem">Ces commentaires sont sauvegardes et visibles par tous. Partagez vos experiences, posez vos questions !</p>
+        <div id="disqus_thread"></div>
+        <noscript>Veuillez activer JavaScript pour voir les commentaires Disqus.</noscript>
       </div>
     </div>
-
-    <div class="sidebar">
-      <div class="widget">
-        <h3>&#x1F3C6; Top contributeurs</h3>
-        <div class="top-member"><div class="tm-avatar" style="background:#e94560">AT</div><div class="tm-info"><div class="name">Antoine T.</div><div class="posts">47 posts</div></div><span class="tm-badge">&#x1F525; Expert</span></div>
-        <div class="top-member"><div class="tm-avatar" style="background:#667eea">LR</div><div class="tm-info"><div class="name">Laura R.</div><div class="posts">31 posts</div></div><span class="tm-badge">&#x2B50; Actif</span></div>
-        <div class="top-member"><div class="tm-avatar" style="background:#43e97b">MG</div><div class="tm-info"><div class="name">Marc G.</div><div class="posts">28 posts</div></div><span class="tm-badge">&#x2B50; Actif</span></div>
-        <div class="top-member"><div class="tm-avatar" style="background:#f093fb">SC</div><div class="tm-info"><div class="name">Sophie C.</div><div class="posts">22 posts</div></div></div>
-        <div class="top-member"><div class="tm-avatar" style="background:#4facfe">PM</div><div class="tm-info"><div class="name">Pierre M.</div><div class="posts">19 posts</div></div></div>
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Top contributeurs</h3>
+        <div class="contributor">
+          <div class="avatar" style="background:linear-gradient(135deg,#4CAF50,#2E7D32);width:36px;height:36px;font-size:0.8rem">AT</div>
+          <span class="name">Antoine T.<br><small style="color:#666">47 posts</small></span>
+          <span class="contrib-badge" style="background:rgba(255,100,50,0.2);color:#ff6432">Expert</span>
+        </div>
+        <div class="contributor">
+          <div class="avatar" style="background:linear-gradient(135deg,#9C27B0,#6A1B9A);width:36px;height:36px;font-size:0.8rem">LR</div>
+          <span class="name">Laura R.<br><small style="color:#666">31 posts</small></span>
+          <span class="contrib-badge" style="background:rgba(255,220,50,0.2);color:#ffdc32">Actif</span>
+        </div>
+        <div class="contributor">
+          <div class="avatar" style="background:linear-gradient(135deg,#2196F3,#1565C0);width:36px;height:36px;font-size:0.8rem">MG</div>
+          <span class="name">Marc G.<br><small style="color:#666">28 posts</small></span>
+          <span class="contrib-badge" style="background:rgba(255,220,50,0.2);color:#ffdc32">Actif</span>
+        </div>
       </div>
-
-      <div class="widget">
-        <h3>&#x1F4CB; Regles de la communaute</h3>
-        <ul class="rules-list">
-          <li>Soyez bienveillant et respectueux</li>
-          <li>Partagez votre experience personnelle</li>
-          <li>Pas de spam ni de publicite</li>
-          <li>Citez vos sources si possible</li>
-          <li>Encouragez plutot que critiquer</li>
-          <li>Restez dans le sujet du fil</li>
-        </ul>
+      <div class="sidebar-card">
+        <h3>Regles de la communaute</h3>
+        <p class="rule">Soyez bienveillants et respectueux</p>
+        <p class="rule">Partagez des experiences personnelles</p>
+        <p class="rule">Pas de spam ni de pub non sollicitee</p>
+        <p class="rule">Sourcez vos affirmations medicales</p>
+        <p class="rule">Restez dans les themes bien-etre</p>
       </div>
-
-      <div class="widget">
-        <h3>&#x1F4C8; Sujets tendance</h3>
-        <span class="trending-tag">#sommeil</span>
-        <span class="trending-tag">#routine matinale</span>
-        <span class="trending-tag">#meditation</span>
-        <span class="trending-tag">#procrastination</span>
-        <span class="trending-tag">#habitudes</span>
-        <span class="trending-tag">#sport</span>
-        <span class="trending-tag">#alimentation</span>
-        <span class="trending-tag">#stress</span>
-        <span class="trending-tag">#concentration</span>
+      <div class="sidebar-card">
+        <h3>Tendances cette semaine</h3>
+        <div class="trend-item"><a href="#">Jeune intermittent 16/8</a><span class="trend-count">34</span></div>
+        <div class="trend-item"><a href="#">Routine matinale parfaite</a><span class="trend-count">28</span></div>
+        <div class="trend-item"><a href="#">Dopamine detox weekend</a><span class="trend-count">21</span></div>
+        <div class="trend-item"><a href="#">Lecture 20 min par jour</a><span class="trend-count">19</span></div>
+        <div class="trend-item"><a href="#">Cold shower challenge</a><span class="trend-count">15</span></div>
       </div>
-
-      <div class="widget" style="background:linear-gradient(135deg,#e94560,#c0392b);color:white">
-        <h3 style="color:white;border-bottom-color:rgba(255,255,255,.2)">&#x1F4E7; Newsletter</h3>
-        <p style="font-size:.88em;color:rgba(255,255,255,.85);margin-bottom:15px">Recevez les meilleures discussions de la semaine !</p>
-        <input type="email" placeholder="votre@email.com" style="width:100%;padding:10px 14px;border-radius:25px;border:none;margin-bottom:10px;font-size:.88em;outline:none">
-        <button style="background:white;color:#e94560;border:none;padding:10px 20px;border-radius:25px;font-weight:700;cursor:pointer;width:100%">S'abonner</button>
+      <div class="sidebar-card">
+        <h3>Newsletter FlowPerso</h3>
+        <p style="font-size:0.85rem;color:#888;margin-bottom:1rem">Recois nos meilleurs articles chaque semaine</p>
+        <input type="email" placeholder="Ton email" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.6rem 1rem;color:#fff;margin-bottom:0.75rem">
+        <button style="width:100%;padding:0.6rem;background:#e94560;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer">S'abonner</button>
       </div>
+    </aside>
+  </div>
+</div>
+<div class="modal" id="newThreadModal">
+  <div class="modal-content">
+    <h2>Creer une nouvelle discussion</h2>
+    <div class="form-group">
+      <label>Votre pseudo</label>
+      <input type="text" id="newAuthor" placeholder="Ex: Marie L.">
+    </div>
+    <div class="form-group">
+      <label>Categorie</label>
+      <select id="newCategory">
+        <option value="sommeil">Sommeil</option>
+        <option value="productivite">Productivite</option>
+        <option value="habitudes">Habitudes</option>
+        <option value="meditation">Meditation</option>
+        <option value="nutrition">Nutrition</option>
+        <option value="motivation">Motivation</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Titre de votre question</label>
+      <input type="text" id="newTitle" placeholder="Ex: Comment ameliorer mon sommeil ?">
+    </div>
+    <div class="form-group">
+      <label>Votre message</label>
+      <textarea id="newContent" placeholder="Decrivez votre experience, posez votre question..."></textarea>
+    </div>
+    <div class="modal-btns">
+      <button class="btn btn-secondary" onclick="closeModal()">Annuler</button>
+      <button class="btn btn-primary" onclick="submitThread()">Publier</button>
     </div>
   </div>
 </div>
-
 <footer>
-  <p><a href="index.html">Accueil FlowPerso</a> - 2026 - Un blog de passionnes pour les curieux du bien-etre</p>
+  <div class="logo-footer"><span style="color:#e94560">Flow</span><span style="color:#fff">Perso</span></div>
+  <p>Blog de passionnes du developpement personnel et du bien-etre</p>
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#articles">Articles</a>
+    <a href="forum.html">Forum</a>
+    <a href="#">Contact</a>
+  </div>
+  <p style="margin-top:1.5rem;font-size:0.8rem;color:#444">2024 FlowPerso - Fait avec passion</p>
 </footer>
-
 <script>
-function toggleForm(){const f=document.getElementById('postForm');f.classList.toggle('open')}
-function toggleReplies(id){const r=document.getElementById(id);r.classList.toggle('open')}
-function filterCat(cat,btn){document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.thread').forEach(t=>{if(cat==='all'||t.dataset.cat===cat){t.style.display='block'}else{t.style.display='none'}})}
-function addReply(id){const inp=document.getElementById('replyInput_'+id);const val=inp.value.trim();if(!val)return;const section=document.getElementById(id);const replyInput=section.querySelector('.reply-input');const colors=['#e94560','#667eea','#43e97b','#f093fb','#4facfe','#fa709a','#a18cd1'];const color=colors[Math.floor(Math.random()*colors.length)];const div=document.createElement('div');div.className='reply';div.innerHTML='<div class="reply-avatar" style="background:'+color+'">Moi</div><div class="reply-content"><div class="reply-author">Vous</div><div class="reply-date">a l instant</div><p>'+val+'</p></div>';section.insertBefore(div,replyInput);inp.value='';document.getElementById('postCount').innerText=parseInt(document.getElementById('postCount').innerText.replace(/s/g,''))+1+' '}
-function addPost(){const author=document.getElementById('postAuthor').value.trim()||'Anonyme';const title=document.getElementById('postTitle').value.trim();const content=document.getElementById('postContent').value.trim();const cat=document.getElementById('postCat').value;if(!title||!content){alert('Merci de remplir le titre et le contenu !');return;}const colors=['#e94560','#667eea','#43e97b','#f093fb','#4facfe','#fa709a','#a18cd1'];const color=colors[Math.floor(Math.random()*colors.length)];const initials=author.substring(0,2).toUpperCase();const catLabels={'sommeil':'Sommeil','productivite':'Productivite','habitudes':'Habitudes','meditation':'Meditation','nutrition':'Nutrition','motivation':'Motivation'};const newId='r'+Date.now();const div=document.createElement('div');div.className='thread';div.dataset.cat=cat;div.innerHTML='<div class="thread-header"><div class="thread-avatar" style="background:'+color+'">'+initials+'</div><div class="thread-meta"><div class="thread-author">'+author+' <span class="hot-badge">Nouveau</span></div><div class="thread-date">a l instant</div></div></div><div class="thread-title">'+title+'</div><div class="thread-preview">'+content+'</div><div class="thread-footer"><span class="thread-tag">'+catLabels[cat]+'</span><span class="thread-stat">0 reponses</span><span class="thread-stat">1 vue</span><span class="thread-stat" style="margin-left:auto;color:#e94560;font-weight:700;cursor:pointer" onclick="toggleReplies(''+newId+'')">Voir les reponses</span></div><div class="reply-section" id="'+newId+'"><div class="reply-input"><input type="text" placeholder="Votre reponse..." id="replyInput_'+newId+'"><button onclick="addReply(''+newId+'')">Repondre</button></div></div>';const list=document.getElementById('threadsList');list.insertBefore(div,list.firstChild);document.getElementById('postForm').classList.remove('open');document.getElementById('postTitle').value='';document.getElementById('postContent').value='';document.getElementById('postAuthor').value='';const mc=document.getElementById('memberCount');mc.innerText=parseInt(mc.innerText)+1;}
+function toggleReplies(id){var el=document.getElementById('replies-'+id);el.style.display=el.style.display==='none'?'block':'none';}
+function filterThreads(cat,btn){document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('.thread-card').forEach(function(t){t.style.display=(cat==='all'||t.dataset.category===cat)?'block':'none';});}
+function openModal(){document.getElementById('newThreadModal').classList.add('active');}
+function closeModal(){document.getElementById('newThreadModal').classList.remove('active');}
+function submitThread(){var author=document.getElementById('newAuthor').value||'Anonyme';var title=document.getElementById('newTitle').value;var content=document.getElementById('newContent').value;if(!title||!content){alert('Merci de remplir le titre et le message.');return;}var initials=author.split(' ').map(function(w){return w[0];}).join('').substring(0,2).toUpperCase();var html='<div class="thread-card" data-category="'+document.getElementById('newCategory').value+'"><div class="thread-header"><div class="avatar" style="background:linear-gradient(135deg,#e94560,#c73652)">'+initials+'</div><div class="thread-meta"><span class="author">'+author+'</span><br><span class="time">a l instant</span></div><span class="badge badge-new">Nouveau</span></div><div class="thread-title">'+title+'</div><div class="thread-preview">'+content+'</div><div class="thread-footer"><div class="thread-stats"><span>0 reponse</span></div></div></div>';document.getElementById('threads-container').insertAdjacentHTML('afterbegin',html);closeModal();document.getElementById('newAuthor').value='';document.getElementById('newTitle').value='';document.getElementById('newContent').value='';}
+var disqus_config=function(){this.page.url='https://tiagoo937-design.github.io/vitamind/forum.html';this.page.identifier='forum-flowperso';};
+(function(){var d=document,s=d.createElement('script');s.src='https://flowperso.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();
 </script>
 </body></html>
