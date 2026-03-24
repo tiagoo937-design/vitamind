@@ -24,10 +24,11 @@ nav a:hover{background:#e94560;color:white}
 .section{padding:70px 0}
 .section-title{font-size:2.2em;font-weight:900;color:#1a1a2e;text-align:center;margin-bottom:12px}
 .section-sub{text-align:center;color:#777;font-size:1.05em;margin-bottom:45px;max-width:650px;margin-left:auto;margin-right:auto}
-.stats-bar{background:#1a1a2e;padding:50px 0;color:white}
-.stats-grid{display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
-.stat .number{font-size:3em;font-weight:900;color:#e94560;display:block}
-.stat .label{font-size:.95em;color:#aac4e6}
+.about-bar{background:white;padding:50px 0;border-bottom:1px solid #eee}
+.about-inner{display:flex;align-items:center;gap:40px;max-width:900px;margin:0 auto;padding:0 25px}
+.about-avatar{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#e94560,#c0392b);display:flex;align-items:center;justify-content:center;font-size:2.5em;flex-shrink:0}
+.about-text h3{font-size:1.3em;font-weight:900;color:#1a1a2e;margin-bottom:6px}
+.about-text p{color:#555;font-size:.97em;line-height:1.7}
 .ad-banner{background:#f0f2f5;border:2px dashed #ccc;border-radius:12px;padding:25px;text-align:center;margin:35px 0;color:#aaa;font-size:.85em}
 .ad-banner strong{display:block;font-size:1em;color:#bbb;margin-bottom:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
@@ -68,6 +69,7 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
 </style>
 </head>
 <body>
+
 <header>
   <div class="logo">Vita<span>Mind</span></div>
   <nav>
@@ -81,34 +83,35 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
 </header>
 
 <div class="hero">
-  <h1>Transforme ta vie avec le<br><span>Developpement Personnel</span></h1>
-  <p>Techniques prouvees pour booster ta productivite, reduire le stress et atteindre tes objectifs. Plus de 200 000 lecteurs nous font confiance.</p>
-  <a class="cta-btn" href="#articles">Lire les articles</a>
+  <h1>Mieux dormir, mieux penser,<br><span>mieux vivre</span></h1>
+  <p>Passionnes de bien-etre et de developpement personnel, on partage ici nos recherches, decouvertes et methodes concretes pour ameliorer votre quotidien.</p>
+  <a class="cta-btn" href="#articles">Decouvrir les articles</a>
 </div>
 
-<div class="stats-bar">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat"><span class="number">200K+</span><span class="label">Lecteurs mensuels</span></div>
-      <div class="stat"><span class="number">350+</span><span class="label">Articles publies</span></div>
-      <div class="stat"><span class="number">98%</span><span class="label">Lecteurs satisfaits</span></div>
-      <div class="stat"><span class="number">5 ans</span><span class="label">D'expertise</span></div>
+<div class="about-bar">
+  <div class="about-inner">
+    <div class="about-avatar">&#x1F9E0;</div>
+    <div class="about-text">
+      <h3>Qui sommes-nous ?</h3>
+      <p>VitaMind est un blog cree par des passionnes de sommeil, de neurosciences et de developpement personnel. On lit, on teste, on recherche — et on vous partage ce qui fonctionne vraiment. Pas de diplomes sur les murs, juste une curiosite sincere et des sources serieuses.</p>
     </div>
   </div>
 </div>
 
 <section class="section" id="articles">
   <div class="container">
-    <h2 class="section-title">Articles a la Une</h2>
-    <p class="section-sub">Des contenus selectionnes pour vous aider a progresser chaque jour.</p>
+    <h2 class="section-title">Nos derniers articles</h2>
+    <p class="section-sub">Des contenus bases sur la recherche scientifique, ecrits avec passion pour vous aider a progresser.</p>
+
     <div class="ad-banner"><strong>ESPACE PUBLICITAIRE</strong>728x90 - Google AdSense Leaderboard</div>
+
     <div class="grid">
       <div class="card">
         <div class="card-img" style="background:linear-gradient(135deg,#667eea,#764ba2)">&#x1F9E0;</div>
         <div class="card-body">
           <span class="tag">Productivite</span>
           <h3>La methode des 5 minutes pour sortir de la procrastination</h3>
-          <p>Vous repoussez constamment vos taches ? Cette technique simple a change la vie de millions de personnes.</p>
+          <p>Vous repoussez constamment vos taches ? Cette technique simple a change notre rapport au travail. On vous explique pourquoi ca marche.</p>
           <div class="card-meta"><span>15 mars 2026</span><span>8 min</span></div>
           <a class="read-more" href="articles/procrastination.html">Lire l'article &rarr;</a>
         </div>
@@ -117,8 +120,8 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
         <div class="card-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)">&#x1F634;</div>
         <div class="card-body">
           <span class="tag">Sommeil</span>
-          <h3>Dormir 7h et se reveiller plein d'energie : le protocole complet</h3>
-          <p>La qualite du sommeil est le pilier numero 1 de la sante mentale et physique. Voici comment l'optimiser.</p>
+          <h3>Dormir 7h et se reveiller plein d'energie : ce qu'on a appris</h3>
+          <p>Apres des mois a lire sur le sommeil et tester des protocoles, voici ce qui a vraiment fait une difference. Sources scientifiques a l'appui.</p>
           <div class="card-meta"><span>12 mars 2026</span><span>12 min</span></div>
           <a class="read-more" href="articles/sommeil.html">Lire l'article &rarr;</a>
         </div>
@@ -127,8 +130,8 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
         <div class="card-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">&#x1F3AF;</div>
         <div class="card-body">
           <span class="tag">Objectifs</span>
-          <h3>Comment fixer des objectifs que vous allez vraiment atteindre</h3>
-          <p>La methode SMART est depassee. Decouvrez l'approche OKR adaptee pour des resultats concrets en 90 jours.</p>
+          <h3>Comment fixer des objectifs qu'on atteint vraiment</h3>
+          <p>La methode SMART ne suffit pas. On a decouvert l'approche OKR et ca a tout change. Voici comment l'adapter a votre vie en 90 jours.</p>
           <div class="card-meta"><span>8 mars 2026</span><span>10 min</span></div>
           <a class="read-more" href="articles/objectifs.html">Lire l'article &rarr;</a>
         </div>
@@ -137,8 +140,8 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
         <div class="card-img" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">&#x1F9D8;</div>
         <div class="card-body">
           <span class="tag">Meditation</span>
-          <h3>10 minutes de meditation par jour : ce qui se passe dans votre cerveau</h3>
-          <p>Des etudes IRM montrent des changements dans le cerveau apres 8 semaines seulement. Les resultats sont bluffants.</p>
+          <h3>On a medite 10 min par jour pendant 30 jours : voici ce qui s'est passe</h3>
+          <p>Des etudes IRM montrent des changements reels dans le cerveau. On a teste et on vous raconte notre experience, sans filtre.</p>
           <div class="card-meta"><span>5 mars 2026</span><span>9 min</span></div>
           <a class="read-more" href="articles/meditation.html">Lire l'article &rarr;</a>
         </div>
@@ -147,8 +150,8 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
         <div class="card-img" style="background:linear-gradient(135deg,#fa709a,#fee140)">&#x1F4AA;</div>
         <div class="card-body">
           <span class="tag">Habitudes</span>
-          <h3>La science des habitudes : pourquoi vous echouez et comment reussir</h3>
-          <p>95% des gens abandonnent leurs bonnes resolutions en moins de 3 semaines. Voici la boucle neurologique exacte.</p>
+          <h3>La science des habitudes : pourquoi on echoue et comment changer</h3>
+          <p>95% des gens abandonnent leurs bonnes resolutions. On a compris pourquoi — et surtout comment en sortir grace a la neurologie.</p>
           <div class="card-meta"><span>1 mars 2026</span><span>15 min</span></div>
           <a class="read-more" href="articles/habitudes.html">Lire l'article &rarr;</a>
         </div>
@@ -157,30 +160,31 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
         <div class="card-img" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">&#x2764;&#xFE0F;</div>
         <div class="card-body">
           <span class="tag">Relations</span>
-          <h3>Communication Non-Violente : parler sans blesser</h3>
-          <p>Une technique de psychologie qui transforme radicalement la qualite de vos relations professionnelles et personnelles.</p>
+          <h3>La Communication Non-Violente : on a teste, ca transforme les echanges</h3>
+          <p>Une technique issue de la psychologie qui change radicalement la qualite de vos conversations. Simple a comprendre, difficile a maitriser.</p>
           <div class="card-meta"><span>25 fev. 2026</span><span>11 min</span></div>
           <a class="read-more" href="articles/communication.html">Lire l'article &rarr;</a>
         </div>
       </div>
     </div>
-    <div class="ad-banner" style="margin-top:45px"><strong>ESPACE PUBLICITAIRE</strong>300x250 - Rectangle Medium (fort RPM)</div>
+
+    <div class="ad-banner" style="margin-top:45px"><strong>ESPACE PUBLICITAIRE</strong>300x250 - Rectangle Medium</div>
   </div>
 </section>
 
 <section class="dark-section" id="conseils">
   <div class="container">
-    <h2 class="section-title" style="color:white">Les 8 Piliers du Bien-etre</h2>
-    <p class="section-sub" style="color:#aac4e6">Maitrisez ces domaines et votre vie changera radicalement.</p>
+    <h2 class="section-title" style="color:white">Les 8 sujets qu'on adore explorer</h2>
+    <p class="section-sub" style="color:#aac4e6">Ce sont les piliers qu'on etudie, teste et partage sur VitaMind.</p>
     <div class="tips-grid">
-      <div class="tip"><div class="tip-icon">&#x1F9E0;</div><h3>Mindset</h3><p>Adopter un etat d'esprit de croissance est la premiere etape vers une transformation durable.</p></div>
-      <div class="tip"><div class="tip-icon">&#x23F0;</div><h3>Gestion du Temps</h3><p>Maitrisez le Time Blocking et la matrice d'Eisenhower pour gagner 3h par jour.</p></div>
-      <div class="tip"><div class="tip-icon">&#x1F634;</div><h3>Sommeil</h3><p>7 a 9h de sommeil reduisent la depression de 50% et augmentent la productivite de 30%.</p></div>
-      <div class="tip"><div class="tip-icon">&#x1F957;</div><h3>Nutrition</h3><p>Votre cerveau est ce que vous mangez. Omega-3 et antioxydants boostent cognition et humeur.</p></div>
-      <div class="tip"><div class="tip-icon">&#x1F3C3;</div><h3>Sport</h3><p>30 min d'exercice liberent dopamine et serotonine. L'antidepresseur naturel le plus puissant.</p></div>
-      <div class="tip"><div class="tip-icon">&#x1F4DA;</div><h3>Apprentissage</h3><p>20 pages par jour = 18 livres par an. Les lecteurs reguliers gagnent 2x plus en moyenne.</p></div>
-      <div class="tip"><div class="tip-icon">&#x1F91D;</div><h3>Relations</h3><p>Harvard prouve sur 80 ans : la qualite des relations est le facteur n1 du bonheur.</p></div>
-      <div class="tip"><div class="tip-icon">&#x1F3AF;</div><h3>Vision</h3><p>Ecrire ses objectifs donne 42% plus de chances de les atteindre. Planifiez sur 10 ans.</p></div>
+      <div class="tip"><div class="tip-icon">&#x1F9E0;</div><h3>Mindset</h3><p>L'etat d'esprit de croissance change tout. On explore comment le cultiver au quotidien.</p></div>
+      <div class="tip"><div class="tip-icon">&#x23F0;</div><h3>Gestion du Temps</h3><p>Time Blocking, Pomodoro, matrice d'Eisenhower : on teste et on vous dit ce qui marche.</p></div>
+      <div class="tip"><div class="tip-icon">&#x1F634;</div><h3>Sommeil</h3><p>Notre sujet de passion numero 1. La science du sommeil est fascinante et pleine de surprises.</p></div>
+      <div class="tip"><div class="tip-icon">&#x1F957;</div><h3>Nutrition</h3><p>Le lien entre alimentation et performances cognitives. Ce que vous mangez affecte votre cerveau.</p></div>
+      <div class="tip"><div class="tip-icon">&#x1F3C3;</div><h3>Sport</h3><p>L'exercice physique est l'antidepresseur le plus puissant qui soit. On vous explique pourquoi.</p></div>
+      <div class="tip"><div class="tip-icon">&#x1F4DA;</div><h3>Lecture</h3><p>On lit et on resumes les meilleurs livres de developpement personnel pour vous faire gagner du temps.</p></div>
+      <div class="tip"><div class="tip-icon">&#x1F91D;</div><h3>Relations</h3><p>La qualite de nos liens humains est le facteur numero 1 du bonheur selon 80 ans d'etudes Harvard.</p></div>
+      <div class="tip"><div class="tip-icon">&#x1F3AF;</div><h3>Objectifs</h3><p>On explore les meilleures methodes pour transformer ses intentions en resultats concrets.</p></div>
     </div>
   </div>
 </section>
@@ -188,8 +192,8 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
 <section class="section" style="background:white">
   <div class="container">
     <div class="quote-box">
-      <blockquote>"La discipline est le pont entre les objectifs et l'accomplissement."</blockquote>
-      <cite>- Jim Rohn</cite>
+      <blockquote>"Vous n'avez pas a etre extraordinaire pour commencer, mais vous devez commencer pour devenir extraordinaire."</blockquote>
+      <cite>- Zig Ziglar</cite>
     </div>
   </div>
 </section>
@@ -198,8 +202,8 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
   <div class="container">
     <div class="newsletter-box">
       <div style="font-size:2.5em;margin-bottom:12px">&#x1F4E7;</div>
-      <h2>Rejoignez 200 000 lecteurs</h2>
-      <p>Recevez chaque semaine nos meilleurs articles et conseils. Gratuit, sans spam.</p>
+      <h2>Rejoignez la communaute</h2>
+      <p>Chaque semaine, on partage nos meilleures decouvertes sur le bien-etre et la productivite. Gratuit, sans spam, desabonnement en 1 clic.</p>
       <div class="email-form">
         <input type="email" placeholder="votre@email.com">
         <button>S'abonner</button>
@@ -214,7 +218,7 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
     <div class="footer-grid">
       <div class="footer-col">
         <div style="font-size:1.8em;font-weight:900;color:#e94560;margin-bottom:12px">Vita<span style="color:white">Mind</span></div>
-        <p style="color:#666;font-size:.9em;line-height:1.7">Le magazine dedie au bien-etre et au developpement personnel. Pour vivre pleinement chaque jour.</p>
+        <p style="color:#666;font-size:.9em;line-height:1.7">Un blog tenu par des passionnes de sommeil, de neurosciences et de bien-etre. On partage ce qu'on apprend, honnêtement.</p>
       </div>
       <div class="footer-col">
         <h4>Articles</h4>
@@ -234,23 +238,24 @@ footer{background:#1a1a2e;color:#aaa;padding:55px 0 25px}
           <li><a href="#">Sante mentale</a></li>
           <li><a href="#">Nutrition</a></li>
           <li><a href="#">Sport</a></li>
-          <li><a href="#">Finances</a></li>
+          <li><a href="#">Livres</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>A propos</h4>
         <ul>
-          <li><a href="#">Notre mission</a></li>
-          <li><a href="#">Publicite</a></li>
+          <li><a href="#">Notre histoire</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#">Mentions legales</a></li>
+          <li><a href="#">Politique de confidentialite</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>2026 VitaMind - Fait avec amour pour votre epanouissement</p>
+      <p>2026 VitaMind - Un blog de passionnes pour les curieux du bien-etre</p>
     </div>
   </div>
 </footer>
+
 </body>
 </html>
