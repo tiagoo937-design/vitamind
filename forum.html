@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Forum Communauté - FlowPerso</title><meta name="description" content="La communauté FlowPerso - partagez vos expériences, posez vos questions et aidez-vous mutuellement."><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Forum Communaute - FlowPerso</title><meta name="description" content="La communaute FlowPerso - partagez vos experiences, posez vos questions et aidez-vous mutuellement."><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',sans-serif;background:#0a0a0f;color:#e0e0e0;min-height:100vh}
 header{background:rgba(10,10,15,0.95);backdrop-filter:blur(10px);padding:1rem 2rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center}
@@ -8,9 +8,7 @@ nav a.active{background:#e94560;color:#fff;padding:0.4rem 1rem;border-radius:20p
 .forum-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:4rem 2rem;text-align:center}
 .forum-hero h1{font-size:2.5rem;font-weight:800;margin-bottom:1rem}.forum-hero h1 span{color:#e94560}
 .forum-hero p{font-size:1.1rem;color:#aaa;max-width:600px;margin:0 auto 2rem}
-.forum-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
-.fstat{text-align:center}.fstat .num{font-size:2rem;font-weight:800;color:#e94560}
-.fstat .lab{font-size:0.85rem;color:#888;margin-top:0.3rem}
+.forum-tagline{display:inline-block;background:rgba(233,69,96,0.15);border:1px solid rgba(233,69,96,0.3);color:#e94560;padding:0.5rem 1.5rem;border-radius:20px;font-size:0.9rem;font-weight:600}
 .container{max-width:1100px;margin:0 auto;padding:2rem}
 .forum-layout{display:grid;grid-template-columns:1fr 300px;gap:2rem}
 .forum-filters{display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.5rem}
@@ -32,7 +30,6 @@ nav a.active{background:#e94560;color:#fff;padding:0.4rem 1rem;border-radius:20p
 .badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:10px;font-size:0.7rem;font-weight:700}
 .badge-hot{background:rgba(255,100,50,0.2);color:#ff6432}
 .badge-new{background:rgba(50,200,100,0.2);color:#32c864}
-.sidebar{}
 .sidebar-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
 .sidebar-card h3{font-size:1rem;font-weight:700;margin-bottom:1rem;color:#fff}
 .contributor{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
@@ -54,7 +51,7 @@ nav a.active{background:#e94560;color:#fff;padding:0.4rem 1rem;border-radius:20p
 .btn{padding:0.7rem 1.5rem;border-radius:8px;font-size:0.95rem;font-weight:600;cursor:pointer;border:none}
 .btn-primary{background:#e94560;color:#fff}.btn-secondary{background:transparent;color:#aaa;border:1px solid rgba(255,255,255,0.2)}
 .disqus-section{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2rem;margin-top:2rem}
-.disqus-section h2{font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;color:#fff}
+.disqus-section h2{font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;color:#fff}
 footer{background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.1);padding:3rem 2rem;text-align:center;margin-top:3rem}
 footer .logo-footer{font-size:1.5rem;font-weight:800;margin-bottom:0.5rem}
 footer p{color:#666;font-size:0.9rem;margin-bottom:1rem}
@@ -72,16 +69,13 @@ footer .footer-links a:hover{color:#e94560}
     <a href="index.html#newsletter">Newsletter</a>
   </nav>
 </header>
+
 <div class="forum-hero">
-  <h1>La <span>Communauté</span> FlowPerso</h1>
-  <p>Partagez vos expériences, posez vos questions, aidez-vous mutuellement. Ensemble on va plus loin.</p>
-  <div class="forum-stats">
-    <div class="fstat"><div class="num">247</div><div class="lab">Membres</div></div>
-    <div class="fstat"><div class="num">1 284</div><div class="lab">Messages</div></div>
-    <div class="fstat"><div class="num">38</div><div class="lab">Discussions actives</div></div>
-    <div class="fstat"><div class="num">12</div><div class="lab">En ligne</div></div>
-  </div>
+  <h1>La <span>Communaute</span> FlowPerso</h1>
+  <p>Partagez vos experiences, posez vos questions, aidez-vous mutuellement. Ensemble on va plus loin.</p>
+  <span class="forum-tagline">Communaute ouverte a tous - soyez les premiers a rejoindre !</span>
 </div>
+
 <div class="container">
   <div class="forum-layout">
     <div class="forum-main">
@@ -166,7 +160,7 @@ footer .footer-links a:hover{color:#e94560}
           <div id="replies-t4" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1)">
             <div style="display:flex;gap:0.75rem;margin-bottom:1rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px">
               <div class="avatar" style="background:linear-gradient(135deg,#4CAF50,#2E7D32);width:32px;height:32px;font-size:0.75rem">AT</div>
-              <div><span style="font-weight:600;color:#fff;font-size:0.85rem">Antoine T.</span><br><span style="font-size:0.85rem;color:#aaa">Guidee au debut, c'est clairement plus facile. Headspace ou Insight Timer sont gratuits. Apres 30 jours tu peux passer au silence.</span></div>
+              <div><span style="font-weight:600;color:#fff;font-size:0.85rem">Antoine T.</span><br><span style="font-size:0.85rem;color:#aaa">Guidee au debut c'est clairement plus facile. Headspace ou Insight Timer sont gratuits. Apres 30 jours tu peux passer au silence.</span></div>
             </div>
           </div>
         </div>
@@ -190,13 +184,15 @@ footer .footer-links a:hover{color:#e94560}
           </div>
         </div>
       </div>
+
       <div class="disqus-section">
-        <h2>Espace de discussion general (commentaires permanents)</h2>
-        <p style="color:#888;font-size:0.9rem;margin-bottom:1.5rem">Ces commentaires sont sauvegardes et visibles par tous. Partagez vos experiences, posez vos questions !</p>
+        <h2>Laisse un commentaire</h2>
+        <p style="color:#888;font-size:0.9rem;margin-bottom:1.5rem">Partage ton experience, pose ta question - les commentaires sont permanents et visibles par tous.</p>
         <div id="disqus_thread"></div>
         <noscript>Veuillez activer JavaScript pour voir les commentaires Disqus.</noscript>
       </div>
     </div>
+
     <aside class="sidebar">
       <div class="sidebar-card">
         <h3>Top contributeurs</h3>
@@ -226,11 +222,10 @@ footer .footer-links a:hover{color:#e94560}
       </div>
       <div class="sidebar-card">
         <h3>Tendances cette semaine</h3>
-        <div class="trend-item"><a href="#">Jeune intermittent 16/8</a><span class="trend-count">34</span></div>
-        <div class="trend-item"><a href="#">Routine matinale parfaite</a><span class="trend-count">28</span></div>
-        <div class="trend-item"><a href="#">Dopamine detox weekend</a><span class="trend-count">21</span></div>
-        <div class="trend-item"><a href="#">Lecture 20 min par jour</a><span class="trend-count">19</span></div>
-        <div class="trend-item"><a href="#">Cold shower challenge</a><span class="trend-count">15</span></div>
+        <div class="trend-item"><a href="#">Jeune intermittent 16/8</a><span class="trend-count">tendance</span></div>
+        <div class="trend-item"><a href="#">Routine matinale</a><span class="trend-count">tendance</span></div>
+        <div class="trend-item"><a href="#">Dopamine detox</a><span class="trend-count">tendance</span></div>
+        <div class="trend-item"><a href="#">Lecture 20 min par jour</a><span class="trend-count">tendance</span></div>
       </div>
       <div class="sidebar-card">
         <h3>Newsletter FlowPerso</h3>
@@ -241,6 +236,7 @@ footer .footer-links a:hover{color:#e94560}
     </aside>
   </div>
 </div>
+
 <div class="modal" id="newThreadModal">
   <div class="modal-content">
     <h2>Creer une nouvelle discussion</h2>
@@ -273,6 +269,7 @@ footer .footer-links a:hover{color:#e94560}
     </div>
   </div>
 </div>
+
 <footer>
   <div class="logo-footer"><span style="color:#e94560">Flow</span><span style="color:#fff">Perso</span></div>
   <p>Blog de passionnes du developpement personnel et du bien-etre</p>
@@ -284,6 +281,7 @@ footer .footer-links a:hover{color:#e94560}
   </div>
   <p style="margin-top:1.5rem;font-size:0.8rem;color:#444">2024 FlowPerso - Fait avec passion</p>
 </footer>
+
 <script>
 function toggleReplies(id){var el=document.getElementById('replies-'+id);el.style.display=el.style.display==='none'?'block':'none';}
 function filterThreads(cat,btn){document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('.thread-card').forEach(function(t){t.style.display=(cat==='all'||t.dataset.category===cat)?'block':'none';});}
